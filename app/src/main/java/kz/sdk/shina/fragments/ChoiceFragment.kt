@@ -16,6 +16,9 @@ class ChoiceFragment:BaseFragment<FragmentChoiceBinding>(FragmentChoiceBinding::
         binding.sellBtn.setOnClickListener {
             findNavController().navigate(R.id.action_choiceFragment_to_adminFragment)
         }
+        binding.backBtn.setOnClickListener{
+            findNavController().popBackStack()
+        }
     }
 
 }

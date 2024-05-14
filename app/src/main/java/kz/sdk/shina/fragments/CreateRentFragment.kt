@@ -18,6 +18,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class CreateRentFragment:BaseFragment<FragmentCreateRentBinding>(FragmentCreateRentBinding::inflate) {
     private var imageUri: Uri? = null
+    override var showBottomNavigation = false
+
     @Inject
     lateinit var storageReference: StorageReference
 

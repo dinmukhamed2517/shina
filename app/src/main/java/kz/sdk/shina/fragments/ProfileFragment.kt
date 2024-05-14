@@ -25,9 +25,6 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding>(FragmentProfileBindi
     override fun onBindView() {
         userDao.getData()
         super.onBindView()
-        binding.backBtn.setOnClickListener {
-            findNavController().popBackStack()
-        }
         binding.signOutBtn.setOnClickListener {
             signOut()
         }

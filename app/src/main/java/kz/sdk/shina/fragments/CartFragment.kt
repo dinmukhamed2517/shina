@@ -50,9 +50,6 @@ class CartFragment: BaseFragment<FragmentCartBinding>(FragmentCartBinding::infla
 
 
 
-            backBtn.setOnClickListener {
-                findNavController().popBackStack()
-            }
             adapter.deleteButtonClicked = { product ->
                 val keyToDelete = userDao.getDataLiveData.value?.favorites?.filterValues { it.id == product.id }?.keys?.firstOrNull()
                 keyToDelete?.let { key ->
@@ -60,6 +57,7 @@ class CartFragment: BaseFragment<FragmentCartBinding>(FragmentCartBinding::infla
                     val updatedProducts = ArrayList(products).apply {
                         remove(product)
                     }
+                    binding.textView14.isVisible = products.isNotEmpty()
                     adapter.submitList(updatedProducts)
                     products = updatedProducts
                 } ?: run {
@@ -73,7 +71,8 @@ class CartFragment: BaseFragment<FragmentCartBinding>(FragmentCartBinding::infla
                     val updatedProducts = ArrayList(productsRent).apply {
                         remove(product)
                     }
-                    adapter.submitList(updatedProducts)
+                    binding.textView15.isVisible = products.isNotEmpty()
+                    rentAdapter.submitList(updatedProducts)
                     productsRent = updatedProducts
                 } ?: run {
                     Log.e("CartFragment", "Failed to find key for product deletion")
@@ -95,6 +94,9 @@ class CartFragment: BaseFragment<FragmentCartBinding>(FragmentCartBinding::infla
 
 
             val isCartEmpty = products.isEmpty() && productsRent.isEmpty()
+
+            binding.textView14.isVisible = products.isNotEmpty()
+            binding.textView15.isVisible = productsRent.isNotEmpty()
             binding.emptyCartCv.isVisible = isCartEmpty
             binding.cartRecycler.isVisible = !isCartEmpty
         }

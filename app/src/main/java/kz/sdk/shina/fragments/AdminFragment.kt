@@ -16,6 +16,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class AdminFragment:BaseFragment<FragmentAdminBinding>(FragmentAdminBinding::inflate) {
+    override var showBottomNavigation = false
 
     private var imageUri: Uri? = null
     private var isCredit:Boolean = false

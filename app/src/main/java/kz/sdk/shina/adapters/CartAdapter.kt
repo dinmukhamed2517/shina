@@ -55,7 +55,7 @@ class CartAdapter: ListAdapter<Product, BaseProductViewHolder<*>>(ProductDiffUti
                     deleteButtonClicked?.invoke(item)
                 }
                 creditPrice.text = (item.price?.div(72)).toString()+" ₸/мес"
-                description.text = item.year.toString()+" г"+", ${item.type}, ${item.volume} л, ${item.transmission}, c пробегом ${item.millage}, ${item.color}"
+                description.text = item.year.toString()+" г"+", ${item.type}, ${item.volume} л, ${item.transmission}, c пробегом ${item.millage} км, ${item.color}"
             }
             itemView.setOnClickListener {
                 itemClick?.invoke(item)
