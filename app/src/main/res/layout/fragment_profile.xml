@@ -23,7 +23,7 @@
         android:layout_marginHorizontal="40dp"
         style="@style/Mont.SemiBold"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="@color/main_color"
+        android:backgroundTint="@color/blue"
         android:text="Выйти с аккаунта"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -90,119 +90,71 @@
     </androidx.cardview.widget.CardView>
 
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/admin_btn"
+        android:layout_width="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/yellow"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/name">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="20dp"-->
-<!--        app:cardCornerRadius="15dp"-->
-<!--        android:backgroundTint="@color/yellow"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/address">-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/textView2"-->
-<!--                style="@style/Mont.SemiBold"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="10dp"-->
-<!--                android:layout_marginTop="15dp"-->
-<!--                android:text="Бонусы"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="20sp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:id="@+id/cardView3"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginHorizontal="20dp"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                app:cardCornerRadius="15dp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/textView2">-->
-
-<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent">-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/textView3"-->
-<!--                        style="@style/Mont.SemiBold"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="15dp"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:text="Мой счет"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        android:textSize="16sp"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/textView6"-->
-<!--                        style="@style/Mont"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="15dp"-->
-<!--                        android:layout_marginTop="15dp"-->
-<!--                        android:layout_marginBottom="20dp"-->
-<!--                        android:text="Доступно к оплате:"-->
-<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@+id/textView3" />-->
-
-<!--                    <ImageView-->
-<!--                        android:id="@+id/imageView6"-->
-<!--                        android:layout_width="24dp"-->
-<!--                        android:layout_height="24dp"-->
-<!--                        android:layout_marginEnd="10dp"-->
-<!--                        android:src="@drawable/coin_icon"-->
-<!--                        app:layout_constraintBottom_toBottomOf="@+id/textView6"-->
-<!--                        app:layout_constraintEnd_toEndOf="parent"-->
-<!--                        app:layout_constraintTop_toTopOf="@+id/textView6" />-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/bonus"-->
-<!--                        style="@style/Mont.SemiBold"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginEnd="10dp"-->
-<!--                        android:textColor="@color/orange"-->
-<!--                        app:layout_constraintBottom_toBottomOf="@+id/textView6"-->
-<!--                        app:layout_constraintEnd_toStartOf="@+id/imageView6"-->
-<!--                        app:layout_constraintTop_toTopOf="@+id/textView6"-->
-<!--                        tools:text="205.5" />-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
 
-<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
-<!--            </androidx.cardview.widget.CardView>-->
+                    <TextView
+                        android:id="@+id/textView6"
+                        style="@style/Mont.SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="Добавить объявления"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <com.google.android.material.button.MaterialButton-->
-<!--                android:id="@+id/activate_btn"-->
-<!--                style="@style/Mont.SemiBold"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginHorizontal="20dp"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:backgroundTint="@color/cream"-->
-<!--                android:text="Активировать промокод"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:layout_marginBottom="20dp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/cardView3" />-->
 
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-<!--    </androidx.cardview.widget.CardView>-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/activate_btn"
+                style="@style/Mont.SemiBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/cream"
+                android:text="Начать"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 
 

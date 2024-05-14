@@ -107,7 +107,7 @@
         style="@style/Mont.SemiBold"
         android:layout_marginBottom="20dp"
         android:padding="15dp"
-        android:backgroundTint="@color/main_color"
+        android:backgroundTint="@color/blue"
         android:layout_marginHorizontal="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

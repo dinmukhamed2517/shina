@@ -6,10 +6,16 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Product(
-    var id:Int? = null,
+    var id:String? = null,
     var title:String? = null,
-    @DrawableRes
-    var img:Int? = null,
-    var price:Double?= null,
-    var description:String? = null,
+    var img:String? = null,
+    var price:Int?= null,
+    var year:Int? = null,
+    var type:String? = null,
+    var transmission:String? =null,
+    var volume:Int? = null,
+    var millage:Int? =null,
+    var color:String? =null,
+    var isCredit:Boolean = false,
 ): Parcelable
+

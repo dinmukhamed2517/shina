@@ -44,6 +44,9 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding>(FragmentProfileBindi
                 binding.ava.setImageResource(R.drawable.profile_icon)
             }
         }
+        binding.activateBtn.setOnClickListener{
+            findNavController().navigate(R.id.action_profileFragment_to_adminFragment)
+        }
     }
     override fun onStart() {
         super.onStart()

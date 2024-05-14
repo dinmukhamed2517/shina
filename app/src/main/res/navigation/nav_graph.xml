@@ -7,7 +7,14 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="kz.sdk.shina.fragments.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsFragment2"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="kz.sdk.shina.fragments.ProfileFragment"
@@ -15,6 +22,9 @@
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -46,4 +56,35 @@
             android:id="@+id/action_userDetailsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="kz.sdk.shina.fragments.AdminFragment"
+        android:label="AdminFragment" >
+        <action
+            android:id="@+id/action_adminFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="kz.sdk.shina.fragments.ProductDetailsFragment"
+        android:label="ProductDetailsFragment" >
+        <argument
+            android:name="product"
+            app:argType="kz.sdk.shina.models.Product" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="kz.sdk.shina.fragments.CartFragment"
+        android:label="CartFragment" >
+        <action
+            android:id="@+id/action_cartFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rentFragment"
+        android:name="kz.sdk.shina.fragments.RentFragment"
+        android:label="RentFragment" />
 </navigation>

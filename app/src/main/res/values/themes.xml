@@ -5,5 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Shina" parent="Base.Theme.Shina" />
+    <style name="Theme.Shina" parent="Base.Theme.Shina" >
+         <item name="colorPrimary">@color/black</item>
+
+    </style>
 </resources>
