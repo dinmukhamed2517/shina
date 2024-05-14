@@ -59,8 +59,19 @@ abstract class FRDBWrapper<T> {
             db.getReference(getTableName()).child("favorites").child(Id).setValue(value)
         }
     }
+
+    fun saveProductRentToList(value: Product) {
+        val Id = db.getReference(getTableName()).push().key
+        if (Id != null) {
+            db.getReference(getTableName()).child("favoritesRent").child(Id).setValue(value)
+        }
+    }
     fun deleteProductFromList(value:String){
         val ref = db.getReference(getTableName()).child("favorites").child(value)
+        ref.removeValue()
+    }
+    fun deleteProductRentFromList(value:String){
+        val ref = db.getReference(getTableName()).child("favoritesRent").child(value)
         ref.removeValue()
     }
 

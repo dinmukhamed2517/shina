@@ -45,7 +45,7 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding>(FragmentProfileBindi
             }
         }
         binding.activateBtn.setOnClickListener{
-            findNavController().navigate(R.id.action_profileFragment_to_adminFragment)
+            findNavController().navigate(R.id.action_profileFragment_to_choiceFragment)
         }
     }
     override fun onStart() {

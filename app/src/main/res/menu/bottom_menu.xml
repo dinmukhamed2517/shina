@@ -9,8 +9,8 @@
     <item
         android:id="@+id/rentFragment"
         android:enabled="true"
-        android:icon="@drawable/catalog_icon"
-        android:title="Каталог"/>
+        android:icon="@drawable/rent_icon"
+        android:title="Аренда"/>
     <item
         android:id="@+id/cartFragment"
         android:enabled="true"

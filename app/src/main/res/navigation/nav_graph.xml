@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_profileFragment_to_adminFragment"
             app:destination="@id/adminFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_choiceFragment"
+            app:destination="@id/choiceFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -82,9 +85,73 @@
         <action
             android:id="@+id/action_cartFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_productRentFragment"
+            app:destination="@id/productRentFragment" />
     </fragment>
     <fragment
         android:id="@+id/rentFragment"
         android:name="kz.sdk.shina.fragments.RentFragment"
-        android:label="RentFragment" />
+        android:label="RentFragment" >
+        <action
+            android:id="@+id/action_rentFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_rentFragment_to_productRentFragment"
+            app:destination="@id/productRentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choiceFragment"
+        android:name="kz.sdk.shina.fragments.ChoiceFragment"
+        android:label="ChoiceFragment" >
+        <action
+            android:id="@+id/action_choiceFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+        <action
+            android:id="@+id/action_choiceFragment_to_createRentFragment"
+            app:destination="@id/createRentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createRentFragment"
+        android:name="kz.sdk.shina.fragments.CreateRentFragment"
+        android:label="CreateRentFragment" >
+        <action
+            android:id="@+id/action_createRentFragment_to_rentFragment"
+            app:destination="@id/rentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="kz.sdk.shina.fragments.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agreementFragment"
+        android:name="kz.sdk.shina.fragments.AgreementFragment"
+        android:label="AgreementFragment" >
+        <action
+            android:id="@+id/action_agreementFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="kz.sdk.shina.fragments.PaymentFragment"
+        android:label="PaymentFragment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productRentFragment"
+        android:name="kz.sdk.shina.fragments.ProductRentFragment"
+        android:label="ProductRentFragment" >
+        <action
+            android:id="@+id/action_productRentFragment_to_agreementFragment"
+            app:destination="@id/agreementFragment" />
+        <argument
+            android:name="product"
+            app:argType="kz.sdk.shina.models.Product" />
+    </fragment>
 </navigation>

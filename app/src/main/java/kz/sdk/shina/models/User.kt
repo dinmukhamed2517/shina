@@ -5,4 +5,5 @@ data class User(
     var lastname: String?= null,
     var pictureUrl: String? = null,
     var favorites: Map<String, Product> = emptyMap(),
+    var favoritesRent: Map<String, Product> = emptyMap(),
 )

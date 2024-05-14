@@ -67,6 +67,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.activity:activity-ktx:1.8.0")
 
+    implementation("androidx.core:core-splashscreen:1.0.0")
+
     implementation("com.google.dagger:hilt-android:2.46")
     implementation ("com.airbnb.android:lottie:5.2.0")
     implementation(libs.firebase.auth.ktx)

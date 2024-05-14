@@ -18,17 +18,19 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class CartFragment: BaseFragment<FragmentCartBinding>(FragmentCartBinding::inflate) {
     var products: MutableList<Product> = mutableListOf()
+    var productsRent: MutableList<Product> = mutableListOf()
+
 
     @Inject
     lateinit var firebaseAuth: FirebaseAuth
     @Inject
     lateinit var userDao: UserDao
-    var totalCost:Double = 0.0
     override fun onBindView() {
         userDao.getData()
         super.onBindView()
 
         val adapter = CartAdapter()
+        val rentAdapter = CartAdapter()
 
         adapter.itemClick = {
             findNavController().navigate(
@@ -41,7 +43,10 @@ class CartFragment: BaseFragment<FragmentCartBinding>(FragmentCartBinding::infla
             }
 
             cartRecycler.adapter = adapter
-            cartRecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            cartRecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+            rentRecycler.adapter = rentAdapter
+            rentRecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
 
 
@@ -61,15 +66,35 @@ class CartFragment: BaseFragment<FragmentCartBinding>(FragmentCartBinding::infla
                     Log.e("CartFragment", "Failed to find key for product deletion")
                 }
             }
+            rentAdapter.deleteButtonClicked = { product ->
+                val keyToDelete = userDao.getDataLiveData.value?.favorites?.filterValues { it.id == product.id }?.keys?.firstOrNull()
+                keyToDelete?.let { key ->
+                    userDao.deleteProductRentFromList(key)
+                    val updatedProducts = ArrayList(products).apply {
+                        remove(product)
+                    }
+                    adapter.submitList(updatedProducts)
+                    products = updatedProducts
+                } ?: run {
+                    Log.e("CartFragment", "Failed to find key for product deletion")
+                }
+            }
         }
         userDao.getDataLiveData.observe(viewLifecycleOwner) { userData ->
             products.clear()
+            productsRent.clear()
             userData?.favorites?.values?.let { productList ->
                 products.addAll(productList)
             }
+            userData?.favoritesRent?.values?.let { productList ->
+                productsRent.addAll(productList)
+            }
             adapter.submitList(products.toList())
+            rentAdapter.submitList(productsRent.toList())
 
-            val isCartEmpty = products.isEmpty()
+
+
+            val isCartEmpty = products.isEmpty() && productsRent.isEmpty()
             binding.emptyCartCv.isVisible = isCartEmpty
             binding.cartRecycler.isVisible = !isCartEmpty
         }
