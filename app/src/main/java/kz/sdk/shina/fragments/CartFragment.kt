@@ -67,14 +67,14 @@ class CartFragment: BaseFragment<FragmentCartBinding>(FragmentCartBinding::infla
                 }
             }
             rentAdapter.deleteButtonClicked = { product ->
-                val keyToDelete = userDao.getDataLiveData.value?.favorites?.filterValues { it.id == product.id }?.keys?.firstOrNull()
+                val keyToDelete = userDao.getDataLiveData.value?.favoritesRent?.filterValues { it.id == product.id }?.keys?.firstOrNull()
                 keyToDelete?.let { key ->
                     userDao.deleteProductRentFromList(key)
-                    val updatedProducts = ArrayList(products).apply {
+                    val updatedProducts = ArrayList(productsRent).apply {
                         remove(product)
                     }
                     adapter.submitList(updatedProducts)
-                    products = updatedProducts
+                    productsRent = updatedProducts
                 } ?: run {
                     Log.e("CartFragment", "Failed to find key for product deletion")
                 }
