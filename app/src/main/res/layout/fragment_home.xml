@@ -6,6 +6,17 @@
     android:background="@color/white"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/search_btn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/seach_icon"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/blue" />
+
 
     <TextView
         android:id="@+id/textView3"

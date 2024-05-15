@@ -27,6 +27,11 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
             recycler1.adapter = adapter
             recycler1.layoutManager = LinearLayoutManager(requireContext())
         }
+        binding.searchBtn.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_homeFragment_to_searchFragment
+            )
+        }
         loadEvents()
 
         adapter.itemClick =  {

@@ -33,10 +33,10 @@
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginTop="25dp"
-        app:tint = "@color/main_color"
+        app:tint = "@color/blue"
         android:layout_marginEnd="10dp"
         android:src="@drawable/seach_icon"
         app:layout_constraintEnd_toEndOf="parent"

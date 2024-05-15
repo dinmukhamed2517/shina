@@ -6,7 +6,6 @@
     android:background="@color/white"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <I
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/sign_out_btn"
@@ -26,15 +25,15 @@
 
     <TextView
         android:id="@+id/textView"
+        style="@style/Mont.SemiBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Личный кабинет"
         android:textColor="@color/black"
         android:textSize="24sp"
-        style="@style/Mont.SemiBold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
