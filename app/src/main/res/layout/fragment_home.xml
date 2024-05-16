@@ -43,12 +43,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/filter_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_filter" />
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/filter_recycler"
         app:layout_constraintVertical_weight="1"
         tools:itemCount="1"
         tools:listitem="@layout/item_product" />
