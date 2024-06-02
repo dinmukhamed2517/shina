@@ -38,7 +38,7 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding>(FragmentProfileBindi
                     .load(it?.pictureUrl)
                     .into(binding.ava)
             } else {
-                binding.ava.setImageResource(R.drawable.profile_icon)
+                binding.ava.setImageResource(R.drawable.asd)
             }
         }
         binding.activateBtn.setOnClickListener{
