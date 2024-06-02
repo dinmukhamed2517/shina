@@ -29,7 +29,9 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding>(FragmentProfileBindi
             signOut()
         }
         binding.email.text = firebaseAuth.currentUser?.email;
-
+        binding.cardView.setOnClickListener{
+            findNavController().navigate(R.id.action_profileFragment_to_updateProfileFragment)
+        }
 
         userDao.getDataLiveData.observe(this){
             binding.name.text = it?.name
@@ -38,7 +40,7 @@ class ProfileFragment: BaseFragment<FragmentProfileBinding>(FragmentProfileBindi
                     .load(it?.pictureUrl)
                     .into(binding.ava)
             } else {
-                binding.ava.setImageResource(R.drawable.asd)
+                binding.ava.setImageResource(R.drawable.profile_icon)
             }
         }
         binding.activateBtn.setOnClickListener{

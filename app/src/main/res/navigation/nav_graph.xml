@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_profileFragment_to_choiceFragment"
             app:destination="@id/choiceFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -165,4 +168,8 @@
             android:id="@+id/action_searchFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="kz.sdk.shina.fragments.UpdateProfileFragment"
+        android:label="UpdateProfileFragment" />
 </navigation>
